@@ -41,6 +41,20 @@ const AuthorController = {
             if (!doc)return response(res, 400, true, 'Data tidak ditemukan')
             if (doc) return response(res, 200, true, 'Data berhasil dihapus!', doc)
         })
+    },
+    addBook: (req, res) => {
+        Author.findByIdAndUpdate(req.params.id, {$push: {'book': req.body}}, {upsert: true, new: true}, (err, doc) => {
+            if (err) return response(res, 500, false, err)
+            if (!doc) return response(res, 500, true, 'Data tidak ditemukan', doc)
+            if (doc) return response(res, 200, true, 'Data Berhasil di Update!', doc)
+        })
+    },
+    deleteBook: (req, res) => {
+        author.findByIdAndUpdate(req.params.id1, {$pull: {'book': {'_id': req.params.id2}}}, {new: true, upsert: true}, (err, doc)=>{
+            if (err) return response(res, 500, false, err)
+            if (!doc) return response(res, 500, true, 'Data tidak ditemukan', doc)
+            if (doc) return response(res, 200, true, 'Data Berhasil di Update!', doc)
+        })
     }
 }
 
