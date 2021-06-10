@@ -1,0 +1,37 @@
+POST http://localhost:4000/author HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Jaya",
+    "book": [
+        {
+            "title": "Cinta Monyet",
+            "year": "2021"
+        },
+        {
+            "title": "Oke Cinta",
+            "year": "2021"
+        }
+    ]
+}
+
+###
+GET http://localhost:4000 HTTP/1.1
+Content-Type: application/json
+
+###
+PUT http://localhost:4000/author/60c23ceae3a82d3ab0d31a3c
+Content-Type: application/json
+{
+    "name": "Jaya Diningrat",
+    "book": [
+        {
+            "title": "Cinta Benci",
+            "year": "2021"
+        },
+        {
+            "title": "Kalkulus III",
+            "year": "2021"
+        }
+    ]
+}
