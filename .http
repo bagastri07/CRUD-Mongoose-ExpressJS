@@ -53,3 +53,7 @@ Content-Type: application/json
     "title": "PAI 2030",
     "year": "2021"
  }
+
+###
+DELETE http://localhost:4000/author/delbook/60c23931a821e231e44d9a7a/60c2819d842c5f18c0c9184e
+Content-Type: application/json
